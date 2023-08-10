@@ -7,15 +7,7 @@ import (
 	"net/http"
 )
 
-// this represents the clients from price-api, as all price-apis has the same format but different ports and response info, we can use just one client to handle all APIs
-
-type PriceInfo struct {
-	Display  string
-	Currency string
-	Amount   int64
-	Fraction int
-}
-
+// PriceServiceClientI this represents the clients from price-api, as all price-apis has the same format but different ports and response info, we can use just one client to handle all APIs
 type PriceServiceClientI interface {
 	GetPrice() (*PriceInfo, error)
 	HealthCheck() error

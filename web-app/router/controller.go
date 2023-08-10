@@ -4,6 +4,7 @@ import (
 	priceclient "XPrice/web-app/price-client"
 	"fmt"
 	"github.com/gorilla/mux"
+	"math"
 	"net/http"
 	"sort"
 	"sync"
@@ -119,13 +120,13 @@ func (a Controller) priceInfoFromService(client priceclient.PriceServiceClientI,
 func sortPrices(prices []*priceclient.PriceInfo) string {
 	var amounts []float64
 	for i := 0; i < len(prices); i++ {
-		amounts = append(amounts, float64(prices[i].Amount)/float64(prices[i].Fraction))
+		amounts = append(amounts, float64(prices[i].Amount)/math.Pow(10, float64(prices[i].Fraction)))
 	}
 	sort.Float64s(amounts)
 
 	var message = ""
 	for i := 0; i < len(amounts); i++ {
-		message = message + "<div>" + fmt.Sprintf("%f", amounts[i]) + "<div> <br>"
+		message = message + fmt.Sprintf("%f", amounts[i]) + " <br>"
 	}
 	return message
 }
