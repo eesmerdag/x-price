@@ -4,7 +4,8 @@ This is simple Web application that shows prices of Macbook Air M2M
 
 # how to run the service
 
-Service needs port arguments as the first one and many other optional services endpoints. There is not limit for services which provides macbook price. But the all of the services should be run before this particular one.
+Service needs port arguments as the first one and many other optional services endpoints. There is not limit for
+services which provides macbook price. But the all of the services should be run before this particular one.
 
 To run the service, go to project folder and hit:
 
