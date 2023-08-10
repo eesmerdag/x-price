@@ -8,4 +8,5 @@ As a solution:
 This repo has two different projects to run:
 * price-api to provide sample test data for prices
 * web-app to have simple web app page with prices info
+
 Please read each projects readme.md files to see how to run.
